@@ -10,8 +10,19 @@ package com.woolpool.leetCode.SingleNumber;
 
  */
 public class SingleNumber {
+
     public int singleNumber(int[] nums) {
 
         return 1;
+    }
+
+    /**
+     * 算法原理测试代码
+     */
+    public void demo(){
+        int x = 10;
+        int y = 1;
+        int i = x ^ y;
+        System.out.print(i);
     }
 }
