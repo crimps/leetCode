@@ -12,17 +12,9 @@ package com.woolpool.leetCode.SingleNumber;
 public class SingleNumber {
 
     public int singleNumber(int[] nums) {
-
-        return 1;
-    }
-
-    /**
-     * 算法原理测试代码
-     */
-    public void demo(){
-        int x = 101;
-        int y = 1;
-        int i = x ^ y;
-        System.out.print(i);
+        for(int i = 1; i < nums.length; i++){
+            nums[i] ^= nums[i-1];
+        }
+        return nums[nums.length - 1];
     }
 }
