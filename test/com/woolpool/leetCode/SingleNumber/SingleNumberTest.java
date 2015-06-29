@@ -22,8 +22,8 @@ public class SingleNumberTest {
      *异或操作
      */
     public void demo(){
-        int x = 101;
-        int y = 0;
+        int x = 8;
+        int y = 4;
         int i = x ^ y;
         System.out.print(i);
     }
