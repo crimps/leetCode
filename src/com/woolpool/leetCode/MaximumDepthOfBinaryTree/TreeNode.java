@@ -20,6 +20,7 @@ public class TreeNode {
     TreeNode right;
 
     public TreeNode(int x) {
+
         val = x;
     }
 }
