@@ -2,7 +2,7 @@ package com.woolpool.leetCode.MaximumDepthOfBinaryTree;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.Random;
 
 /**
  * 模块: [该类所处的模块功能说明]<br>
@@ -22,6 +22,47 @@ public class MaximumDepthOfBinaryTreeTest {
 
     @Test
     public void testMaxDepth() throws Exception {
+        MaximumDepthOfBinaryTree maximumDepthOfBinaryTree = new MaximumDepthOfBinaryTree();
+        //随机生成二叉树
+        Random random = new Random();
+        int dept = random.nextInt(100);
+        TreeNode root = createBinayTree(dept);
 
+        //计算二叉树的深度
+        int dept_count = maximumDepthOfBinaryTree.maxDepth_al1(root);
+        System.out.println("the binaryTree dept is : " + dept_count);
+        printBinayTree(root);
+    }
+
+    /**
+     * 随机生成二叉树
+     * @return
+     *      根节点
+     */
+    private TreeNode createBinayTree(int dept){
+        if(dept < 0){
+            return new TreeNode(0);
+        }
+        TreeNode root = new TreeNode(dept);
+
+        root.left = createBinayTree(dept - 1);
+        root.right = createBinayTree(dept - 1);
+
+        return  root;
+    }
+
+    /**
+     * 输出二叉树
+     * @param root
+     *          根节点
+     */
+    public void printBinayTree(TreeNode root){
+
+    }
+
+    @Test
+    public void testCreateBandyTree(){
+        TreeNode root = createBinayTree(10);
+        System.out.println(root);
     }
 }
