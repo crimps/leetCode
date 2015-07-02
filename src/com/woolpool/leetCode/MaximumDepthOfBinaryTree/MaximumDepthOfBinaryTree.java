@@ -15,7 +15,7 @@ package com.woolpool.leetCode.MaximumDepthOfBinaryTree;
  * <br>
  */
 
-import javax.swing.tree.TreeNode;
+
 
 /**
  * Given a binary tree, find its maximum depth.
@@ -33,10 +33,13 @@ public class MaximumDepthOfBinaryTree {
      * }
      */
     public int maxDepth_al1(TreeNode root) {
-        int dept = 1;
+        if(null == root){
+            return 0;
+        }
 
+        int left = 1 + maxDepth_al1(root.left);
+        int right = 1 + maxDepth_al1(root.right);
 
-
-        return dept;
+        return left > right ? left : right;
     }
 }
