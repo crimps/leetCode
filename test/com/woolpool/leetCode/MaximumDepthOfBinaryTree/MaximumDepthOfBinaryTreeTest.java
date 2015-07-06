@@ -31,7 +31,7 @@ public class MaximumDepthOfBinaryTreeTest {
         //计算二叉树的深度
         int dept_count = maximumDepthOfBinaryTree.maxDepth_al1(root);
         System.out.println("the binaryTree dept is : " + dept_count);
-        printBinayTree(root);
+//        printBinayTree(root);
     }
 
     /**
@@ -52,12 +52,20 @@ public class MaximumDepthOfBinaryTreeTest {
     }
 
     /**
-     * 输出二叉树
+     * 输出二叉树树状结构
      * @param root
      *          根节点
+     * @param root_x
+     *          根节点的横坐标
+     * @param root_y
+     *          根节点的纵坐标
+     * @param root_childen_interval
+     *          根节点与左、右子树的间隔
      */
-    public void printBinayTree(TreeNode root){
-
+    public void printBinayTree(TreeNode root, int root_x, int root_y, int root_childen_interval, StringBuffer[][] treeString){
+        if(null != root){
+            System.out.print(root);
+        }
     }
 
     @Test
