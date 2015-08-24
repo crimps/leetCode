@@ -27,8 +27,18 @@ package com.woolpool.leetCode.twoSum;
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        int[] a = {1, 1};
-
+        int k = 0;
+        int y = 0;
+        for(int i = 0; i < nums.length; i++) {
+            for(int j = i + 1; j < nums.length; j++) {
+                if(nums[i] + nums[j] == target) {
+                    k = i;
+                    y = j;
+                    break;
+                }
+            }
+        }
+        int[] a = {k + 1, y + 1};
         return  a;
     }
 }
