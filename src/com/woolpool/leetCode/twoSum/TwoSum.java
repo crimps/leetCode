@@ -26,6 +26,14 @@ package com.woolpool.leetCode.twoSum;
  * Output: index1=1, index2=2
  */
 public class TwoSum {
+    /**
+     * 时间复杂度为O(n^2)，空间复杂度为O(1)
+     * 解题思路：
+     *      嵌套两个循环遍历就是了，感觉好low啊，不过竟然可以通过
+     * @param nums
+     * @param target
+     * @return
+     */
     public int[] twoSum(int[] nums, int target) {
         int k = 0;
         int y = 0;
