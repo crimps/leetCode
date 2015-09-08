@@ -31,8 +31,11 @@ public class TwoSum {
      * 解题思路：
      *      嵌套两个循环遍历就是了，感觉好low啊，不过竟然可以通过
      * @param nums
+     *          数组
      * @param target
+     *          和值
      * @return
+     *          数值对应的下标
      */
     public int[] twoSum(int[] nums, int target) {
         int k = 0;
@@ -48,5 +51,23 @@ public class TwoSum {
         }
         int[] a = {k + 1, y + 1};
         return  a;
+    }
+
+    /**
+     * 时间复杂度为O(n^2)，空间复杂度为O(1)
+     * 解题思路：
+     *      嵌套两个循环遍历就是了，感觉好low啊，不过竟然可以通过
+     * @param nums
+     *          数组
+     * @param target
+     *          和值
+     * @return
+     *          数值对应的下标
+     * @return
+     */
+    public int[] twoSum_type2(int[] nums, int target) {
+        int [] a = {1, 2};
+
+        return a;
     }
 }
