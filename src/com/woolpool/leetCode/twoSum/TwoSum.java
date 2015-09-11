@@ -15,6 +15,8 @@ package com.woolpool.leetCode.twoSum;
  * <br>
  */
 
+import java.util.*;
+
 /**
  * Given an array of integers, find two numbers such that they add up to a specific target number.
 
@@ -54,20 +56,27 @@ public class TwoSum {
     }
 
     /**
-     * 时间复杂度为O(n^2)，空间复杂度为O(1)
+     * 时间复杂度O(n)
      * 解题思路：
-     *      嵌套两个循环遍历就是了，感觉好low啊，不过竟然可以通过
+     *
      * @param nums
      *          数组
      * @param target
      *          和值
      * @return
      *          数值对应的下标
-     * @return
      */
     public int[] twoSum_type2(int[] nums, int target) {
-        int [] a = {1, 2};
-
+        int[] a = new int[2];
+        Map<Integer, Integer> numsMap = new HashMap<Integer, Integer>();
+        for(int i = 0; i < nums.length; i++) {
+            if(numsMap.containsKey(nums[i])) {
+                a[0] = numsMap.get(nums[i]) + 1;
+                a[1] = i + 1;
+            } else {
+                numsMap.put(target - nums[i], i);
+            }
+        }
         return a;
     }
 }
