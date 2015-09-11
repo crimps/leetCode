@@ -2,6 +2,9 @@ package com.woolpool.leetCode.twoSum;
 
 import org.junit.Test;
 
+import java.awt.*;
+import java.util.Date;
+
 import static org.junit.Assert.*;
 
 public class TwoSumTest {
@@ -19,7 +22,7 @@ public class TwoSumTest {
 
     @Test
     public void testTwoSum_type2() {
-        int[] b = twoSum.twoSum_type2(a2, 6);
+        int[] b = twoSum.twoSum_type2(a1, targe);
         printList(b);
     }
 

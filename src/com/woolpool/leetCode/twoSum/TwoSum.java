@@ -58,7 +58,10 @@ public class TwoSum {
     /**
      * 时间复杂度O(n)
      * 解题思路：
-     *
+     *      将数组转化为hashMap，key为数值，value为数值下标
+     *      遍历数组：
+     *          若Map中不包含当前数值，则将key:target - num;value=i添加到Map，target - value表示与之对应的数值，i表示数组下标
+     *          若Map中包含当前数值，说明之前有一个数num1，与当前的数值num2是对应的，取出Map中num1记录的下标值及当前的i就是所需的下标值
      * @param nums
      *          数组
      * @param target
@@ -77,6 +80,23 @@ public class TwoSum {
                 numsMap.put(target - nums[i], i);
             }
         }
+        return a;
+    }
+
+    /**
+     * 时间复杂度O(nlogn)
+     * 解题思路：
+     *
+     * @param nums
+     *          数组
+     * @param target
+     *          和值
+     * @return
+     *          数值对应的下标
+     */
+    public int[] twoSum_type3(int[] nums, int target) {
+        int[] a = new int[2];
+
         return a;
     }
 }
