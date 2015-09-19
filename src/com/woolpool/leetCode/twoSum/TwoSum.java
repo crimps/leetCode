@@ -97,6 +97,29 @@ public class TwoSum {
     public int[] twoSum_type3(int[] nums, int target) {
         int[] a = new int[2];
 
+        int head = 0;
+        int tail = nums.length - 1;
+        //记录数值对应的下标
+        double[] numsCopy = new double[nums.length];
+        for(int i = 0; i < nums.length; i++) {
+            numsCopy[i] = nums[i] + 0.01 * i;
+        }
+        //排序
+        Arrays.sort(numsCopy);
+        //遍历数组，双指针夹逼
+        while (head < tail) {
+            if(Math.floor(numsCopy[head]) + Math.floor(numsCopy[tail]) < target) {
+                head++;
+            } else if(Math.floor(numsCopy[head]) + Math.floor(numsCopy[tail]) > target) {
+                tail--;
+            } else {
+                a[0] = (int)Math.floor((numsCopy[head] - Math.floor(numsCopy[head])) * 100);
+                double d = numsCopy[tail] - Math.floor(numsCopy[tail]);
+                a[1] = (int)Math.floor((numsCopy[tail] - Math.floor(numsCopy[tail])) * 100);
+                break;
+            }
+        }
+
         return a;
     }
 }
