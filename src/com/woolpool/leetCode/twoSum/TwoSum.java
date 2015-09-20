@@ -113,9 +113,8 @@ public class TwoSum {
             } else if(Math.floor(numsCopy[head]) + Math.floor(numsCopy[tail]) > target) {
                 tail--;
             } else {
-                a[0] = (int)Math.floor((numsCopy[head] - Math.floor(numsCopy[head])) * 100);
-                double d = numsCopy[tail] - Math.floor(numsCopy[tail]);
-                a[1] = (int)Math.floor((numsCopy[tail] - Math.floor(numsCopy[tail])) * 100);
+                a[0] = (int)(Math.ceil((numsCopy[head] - Math.floor(numsCopy[head])) * 100)) + 1;
+                a[1] = (int)(Math.ceil((numsCopy[tail] - Math.floor(numsCopy[tail])) * 100)) + 1;
                 break;
             }
         }
