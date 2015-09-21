@@ -42,6 +42,7 @@ public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int k = 0;
         int y = 0;
+        int[] a = new int[2];
         for(int i = 0; i < nums.length; i++) {
             for(int j = i + 1; j < nums.length; j++) {
                 if(nums[i] + nums[j] == target) {
@@ -51,7 +52,8 @@ public class TwoSum {
                 }
             }
         }
-        int[] a = {k + 1, y + 1};
+        a[0] = k + 1;
+        a[1] = y + 1;
         return  a;
     }
 
@@ -71,7 +73,7 @@ public class TwoSum {
      */
     public int[] twoSum_type2(int[] nums, int target) {
         int[] a = new int[2];
-        Map<Integer, Integer> numsMap = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> numsMap = new HashMap<>();
         for(int i = 0; i < nums.length; i++) {
             if(numsMap.containsKey(nums[i])) {
                 a[0] = numsMap.get(nums[i]) + 1;
