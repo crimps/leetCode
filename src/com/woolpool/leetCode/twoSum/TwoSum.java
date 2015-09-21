@@ -99,7 +99,7 @@ public class TwoSum {
 
         int head = 0;
         int tail = nums.length - 1;
-        //记录数值对应的下标
+        //记录数值对应的下标,整数部分来表示数值，小数部分来表示数值的下标值
         double[] numsCopy = new double[nums.length];
         for(int i = 0; i < nums.length; i++) {
             numsCopy[i] = nums[i] + 0.01 * i;
@@ -113,6 +113,7 @@ public class TwoSum {
             } else if(Math.floor(numsCopy[head]) + Math.floor(numsCopy[tail]) > target) {
                 tail--;
             } else {
+                //根据数值的小数部分来获取数值下标信息（PS:注意double运算引入的误差消除）
                 a[0] = (int)(Math.ceil((numsCopy[head] - Math.floor(numsCopy[head])) * 100)) + 1;
                 a[1] = (int)(Math.ceil((numsCopy[tail] - Math.floor(numsCopy[tail])) * 100)) + 1;
                 break;
