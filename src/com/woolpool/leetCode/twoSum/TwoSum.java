@@ -84,7 +84,7 @@ public class TwoSum {
     }
 
     /**
-     * 时间复杂度O(nlogn)
+     * 时间复杂度O(n*log^n)
      * 解题思路：
      *
      * @param nums
