@@ -42,6 +42,7 @@ public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int k = 0;
         int y = 0;
+        int[] a = new int[2];
         for(int i = 0; i < nums.length; i++) {
             for(int j = i + 1; j < nums.length; j++) {
                 if(nums[i] + nums[j] == target) {
@@ -51,7 +52,8 @@ public class TwoSum {
                 }
             }
         }
-        int[] a = {k + 1, y + 1};
+        a[0] = k + 1;
+        a[1] = y + 1;
         return  a;
     }
 
@@ -71,7 +73,7 @@ public class TwoSum {
      */
     public int[] twoSum_type2(int[] nums, int target) {
         int[] a = new int[2];
-        Map<Integer, Integer> numsMap = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> numsMap = new HashMap<>();
         for(int i = 0; i < nums.length; i++) {
             if(numsMap.containsKey(nums[i])) {
                 a[0] = numsMap.get(nums[i]) + 1;
@@ -84,7 +86,7 @@ public class TwoSum {
     }
 
     /**
-     * 时间复杂度O(nlogn)
+     * 时间复杂度O(n*log^n)
      * 解题思路：
      *
      * @param nums
@@ -99,7 +101,7 @@ public class TwoSum {
 
         int head = 0;
         int tail = nums.length - 1;
-        //记录数值对应的下标
+        //记录数值对应的下标,整数部分来表示数值，小数部分来表示数值的下标值
         double[] numsCopy = new double[nums.length];
         for(int i = 0; i < nums.length; i++) {
             numsCopy[i] = nums[i] + 0.01 * i;
@@ -113,6 +115,7 @@ public class TwoSum {
             } else if(Math.floor(numsCopy[head]) + Math.floor(numsCopy[tail]) > target) {
                 tail--;
             } else {
+                //根据数值的小数部分来获取数值下标信息（PS:注意double运算引入的误差消除）
                 a[0] = (int)(Math.ceil((numsCopy[head] - Math.floor(numsCopy[head])) * 100)) + 1;
                 a[1] = (int)(Math.ceil((numsCopy[tail] - Math.floor(numsCopy[tail])) * 100)) + 1;
                 break;
