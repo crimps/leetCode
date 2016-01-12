@@ -15,20 +15,23 @@ package com.woolpool.leetCode.addTwoNumbers;
  * <br>
  */
 
-/**
- *
- * You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
+/**
+ * You are given two linked lists representing two non-negative numbers.
+ * The digits are stored in reverse order and each of their nodes contain a single digit.
+ * Add the two numbers and return it as a linked list.
+ * <p/>
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 0 -> 8
  */
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode listNode = new ListNode(1);
-        
+
         return listNode;
     }
 }
+
 
 /**
  * Definition for singly-linked list.
@@ -36,5 +39,22 @@ public class AddTwoNumbers {
 class ListNode {
     int val;
     ListNode next;
-    ListNode(int x) { val = x; }
+
+    ListNode(int x) {
+        val = x;
+    }
+
+    /**
+     * 打印listNode，以(7->0->8)形式展示
+     */
+    public void printListNode() {
+        String rightArrow = "->";
+        String blank = " ";
+        for (ListNode node = this; null != node; node = node.next) {
+            System.out.print(node.val + blank);
+            if(null != node.next) {
+                System.out.print(rightArrow + blank);
+            }
+        }
+    }
 }
