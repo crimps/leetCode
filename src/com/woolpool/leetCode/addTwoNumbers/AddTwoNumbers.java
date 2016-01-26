@@ -26,8 +26,12 @@ package com.woolpool.leetCode.addTwoNumbers;
  */
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode listNode = new ListNode(1);
+        ListNode listNode = new ListNode(l1.val + l2.val);
+        for(ListNode node1 = l1.next, node2 = l2.next; null != node1; node1 = node1.next, node2 = node2.next) {
+            listNode.next = new ListNode(node1.val + node2.val);
 
+
+        }
         return listNode;
     }
 }
@@ -47,7 +51,7 @@ class ListNode {
     /**
      * 打印listNode，以(7->0->8)形式展示
      */
-    public void printListNode() {
+        public void printListNode() {
         String rightArrow = "->";
         String blank = " ";
         for (ListNode node = this; null != node; node = node.next) {
