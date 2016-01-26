@@ -16,6 +16,9 @@ package com.woolpool.leetCode.addTwoNumbers;
  */
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * You are given two linked lists representing two non-negative numbers.
  * The digits are stored in reverse order and each of their nodes contain a single digit.
@@ -26,13 +29,60 @@ package com.woolpool.leetCode.addTwoNumbers;
  */
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode listNode = new ListNode(l1.val + l2.val);
-        for(ListNode node1 = l1.next, node2 = l2.next; null != node1; node1 = node1.next, node2 = node2.next) {
-            listNode.next = new ListNode(node1.val + node2.val);
+        boolean carryFlag = false;
+        boolean highFlag = false;
+        List<ListNode> listNodes = new ArrayList<ListNode>();
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+        for (; null != p1 && null != p2; p1 = p1.next, p2 = p2.next) {
 
+            int value = p1.val + p2.val;
+            if (carryFlag) {
+                value = value + 1;
+                //进位标识清空
+                carryFlag = false;
+            }
 
+            //进位处理
+            if (value > 9) {
+                value = value % 10;
+                carryFlag = true;
+                //高位为空时，新增高位处理
+                if (null == p1.next && null == p2.next) {
+                    highFlag = true;
+                }
+            }
+            listNodes.add(new ListNode(value));
+            if (highFlag) {
+                listNodes.add(new ListNode(1));
+                //新增高位标识清空
+                highFlag = false;
+            }
         }
-        return listNode;
+        //处理链表不等长情况
+        if (null != p1) {
+            for (; null != p1; p1 = p1.next) {
+                //进位处理
+                if (carryFlag) {
+                    p1.val = p1.val + 1;
+                }
+                listNodes.add(new ListNode(p1.val));
+            }
+        } else {
+            for (; null != p2; p2 = p2.next) {
+                //进位处理
+                if (carryFlag) {
+                    p2.val = p2.val + 1;
+                }
+                listNodes.add(new ListNode(p2.val));
+            }
+        }
+
+        for (int i = 0; i < listNodes.size() - 1; i++) {
+            listNodes.get(i).next = listNodes.get(i + 1);
+        }
+
+        return listNodes.get(0);
     }
 }
 
@@ -51,12 +101,12 @@ class ListNode {
     /**
      * 打印listNode，以(7->0->8)形式展示
      */
-        public void printListNode() {
+    public void printListNode() {
         String rightArrow = "->";
         String blank = " ";
         for (ListNode node = this; null != node; node = node.next) {
             System.out.print(node.val + blank);
-            if(null != node.next) {
+            if (null != node.next) {
                 System.out.print(rightArrow + blank);
             }
         }

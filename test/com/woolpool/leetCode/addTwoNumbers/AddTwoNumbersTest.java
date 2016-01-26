@@ -2,8 +2,6 @@ package com.woolpool.leetCode.addTwoNumbers;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * 模块: [该类所处的模块功能说明]<br>
  * 用途: [该类实现的功能说明]<br>
@@ -15,9 +13,68 @@ import static org.junit.Assert.*;
  */
 public class AddTwoNumbersTest {
 
+    /**
+     * 2 -> 4 -> 3
+     * 5 -> 6 -> 4
+     *
+     * @throws Exception
+     */
     @Test public void testAddTwoNumbers() throws Exception {
+        ListNode l1_1 = new ListNode(2);
+        ListNode l1_2 = new ListNode(4);
+        ListNode l1_3 = new ListNode(5);
+        l1_1.next = l1_2;
+        l1_2.next = l1_3;
 
+        ListNode l2_1 = new ListNode(5);
+        ListNode l2_2 = new ListNode(6);
+        ListNode l2_3 = new ListNode(4);
+        l2_1.next = l2_2;
+        l2_2.next = l2_3;
+
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
+        resultList.printListNode();
     }
+
+    @Test public void testAddTwoNumbers_type2() {
+        ListNode l1_1 = new ListNode(5);
+        ListNode l2_1 = new ListNode(5);
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
+        resultList.printListNode();
+    }
+
+    @Test public void testAddTwoNumbers_type3() {
+        ListNode l1_1 = new ListNode(1);
+        ListNode l1_2 = new ListNode(8);
+        l1_1.next = l1_2;
+        ListNode l2_1 = new ListNode(0);
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
+        resultList.printListNode();
+    }
+
+    @Test public void testAddTwoNumbers_type4() {
+        ListNode l1_1 = new ListNode(9);
+        ListNode l1_2 = new ListNode(8);
+        l1_1.next = l1_2;
+        ListNode l2_1 = new ListNode(1);
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
+        resultList.printListNode();
+    }
+
+    @Test public void testAddTwoNumbers_type5() {
+        ListNode l1_1 = new ListNode(1);
+        ListNode l2_1 = new ListNode(9);
+        ListNode l2_2 = new ListNode(9);
+        l2_1.next = l2_2;
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
+        resultList.printListNode();
+    }
+
 
     @Test public void testPrintListNode() {
         ListNode l1 = new ListNode(1);
