@@ -60,8 +60,7 @@ public class AddTwoNumbersTest {
      */
     @Test public void testAddTwoNumbers_type3() {
         ListNode l1_1 = new ListNode(1);
-        ListNode l1_2 = new ListNode(8);
-        l1_1.next = l1_2;
+        l1_1.next = new ListNode(8);
         ListNode l2_1 = new ListNode(0);
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
@@ -76,8 +75,7 @@ public class AddTwoNumbersTest {
      */
     @Test public void testAddTwoNumbers_type4() {
         ListNode l1_1 = new ListNode(9);
-        ListNode l1_2 = new ListNode(8);
-        l1_1.next = l1_2;
+        l1_1.next = new ListNode(8);
         ListNode l2_1 = new ListNode(1);
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
@@ -93,8 +91,7 @@ public class AddTwoNumbersTest {
     @Test public void testAddTwoNumbers_type5() {
         ListNode l1_1 = new ListNode(1);
         ListNode l2_1 = new ListNode(9);
-        ListNode l2_2 = new ListNode(9);
-        l2_1.next = l2_2;
+        l2_1.next = new ListNode(9);
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
         resultList.printListNode();
