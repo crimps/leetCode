@@ -29,14 +29,23 @@ import java.util.List;
  */
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        //进位标识
         boolean carryFlag = false;
+        //补高位标识
         boolean highFlag = false;
         List<ListNode> listNodes = new ArrayList<>();
         ListNode p1 = l1;
         ListNode p2 = l2;
-        for (; null != p1 && null != p2; p1 = p1.next, p2 = p2.next) {
-
-            int value = p1.val + p2.val;
+        while (null != p1 || null != p2) {
+            int value1 = 0;
+            int value2 = 0;
+            if (null != p1) {
+                value1 = p1.val;
+            }
+            if (null != p2) {
+                value2 = p2.val;
+            }
+            int value = value1 + value2;
             if (carryFlag) {
                 value = value + 1;
                 //进位标识清空
@@ -48,7 +57,7 @@ public class AddTwoNumbers {
                 value = value % 10;
                 carryFlag = true;
                 //高位为空时，新增高位处理
-                if (null == p1.next && null == p2.next) {
+                if ((null != p1 && null == p1.next) && (null != p2 && null == p2.next)) {
                     highFlag = true;
                 }
             }
@@ -58,23 +67,17 @@ public class AddTwoNumbers {
                 //新增高位标识清空
                 highFlag = false;
             }
-        }
-        //处理链表不等长情况
-        if (null != p1) {
-            for (; null != p1; p1 = p1.next) {
-                //进位处理
-                if (carryFlag) {
-                    p1.val = p1.val + 1;
-                }
-                listNodes.add(new ListNode(p1.val));
+
+            //链表后移处理
+            if (null != p1 && null != p1.next) {
+                p1 = p1.next;
+            } else {
+                p1 = null;
             }
-        } else {
-            for (; null != p2; p2 = p2.next) {
-                //进位处理
-                if (carryFlag) {
-                    p2.val = p2.val + 1;
-                }
-                listNodes.add(new ListNode(p2.val));
+            if (null != p2 && null != p2.next) {
+                p2 = p2.next;
+            } else {
+                p2 = null;
             }
         }
 

@@ -83,10 +83,10 @@ public class AddTwoNumbersTest {
     }
 
     /**
-     * 1 -> 9
+     * 1 -> 9 -> 9
      * 9
      *
-     * 0 -> 0 -> 1
+     * 0 -> 0 -> 0 -> 1
      */
     @Test public void testAddTwoNumbers_type5() {
         ListNode l1_1 = new ListNode(1);
