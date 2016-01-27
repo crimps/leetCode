@@ -2,6 +2,8 @@ package com.woolpool.leetCode.addTwoNumbers;
 
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * 模块: [该类所处的模块功能说明]<br>
  * 用途: [该类实现的功能说明]<br>
@@ -89,6 +91,23 @@ public class AddTwoNumbersTest {
      * 0 -> 0 -> 0 -> 1
      */
     @Test public void testAddTwoNumbers_type5() {
+        ListNode l1_1 = new ListNode(1);
+        ListNode l1_2 = new ListNode(9);
+        l1_1.next = l1_2;
+        l1_2.next = new ListNode(9);
+        ListNode l2_1 = new ListNode(9);
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode resultList = addTwoNumbers.addTwoNumbers(l1_1, l2_1);
+        resultList.printListNode();
+    }
+
+    /**
+     * 1
+     * 9 -> 9
+     *
+     * 0 -> 0 -> 1
+     */
+    @Test public void testAddTwoNumbers_type6() {
         ListNode l1_1 = new ListNode(1);
         ListNode l2_1 = new ListNode(9);
         l2_1.next = new ListNode(9);

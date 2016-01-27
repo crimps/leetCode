@@ -57,16 +57,11 @@ public class AddTwoNumbers {
                 value = value % 10;
                 carryFlag = true;
                 //高位为空时，新增高位处理
-                if ((null != p1 && null == p1.next) && (null != p2 && null == p2.next)) {
+                if (((null != p1 && null == p1.next) && (null == p2 || null == p2.next)) || ((null != p2 && null == p2.next) && (null == p1))) {
                     highFlag = true;
                 }
             }
             listNodes.add(new ListNode(value));
-            if (highFlag) {
-                listNodes.add(new ListNode(1));
-                //新增高位标识清空
-                highFlag = false;
-            }
 
             //链表后移处理
             if (null != p1 && null != p1.next) {
@@ -79,6 +74,10 @@ public class AddTwoNumbers {
             } else {
                 p2 = null;
             }
+        }
+        //最后新增高位
+        if(highFlag) {
+            listNodes.add(new ListNode(1));
         }
 
         for (int i = 0; i < listNodes.size() - 1; i++) {
