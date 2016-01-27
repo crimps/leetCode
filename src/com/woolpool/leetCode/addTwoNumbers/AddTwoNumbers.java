@@ -31,7 +31,7 @@ public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         boolean carryFlag = false;
         boolean highFlag = false;
-        List<ListNode> listNodes = new ArrayList<ListNode>();
+        List<ListNode> listNodes = new ArrayList<>();
         ListNode p1 = l1;
         ListNode p2 = l2;
         for (; null != p1 && null != p2; p1 = p1.next, p2 = p2.next) {

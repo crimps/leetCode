@@ -14,9 +14,10 @@ import org.junit.Test;
 public class AddTwoNumbersTest {
 
     /**
-     * 2 -> 4 -> 3
+     * 2 -> 4 -> 5
      * 5 -> 6 -> 4
      *
+     * 7 -> 0 - > 0 -> 1
      * @throws Exception
      */
     @Test public void testAddTwoNumbers() throws Exception {
@@ -37,6 +38,12 @@ public class AddTwoNumbersTest {
         resultList.printListNode();
     }
 
+    /**
+     * 5
+     * 5
+     *
+     * 0 -> 1
+     */
     @Test public void testAddTwoNumbers_type2() {
         ListNode l1_1 = new ListNode(5);
         ListNode l2_1 = new ListNode(5);
@@ -45,6 +52,12 @@ public class AddTwoNumbersTest {
         resultList.printListNode();
     }
 
+    /**
+     * 1 -> 8
+     * 0
+     *
+     * 1 -> 8
+     */
     @Test public void testAddTwoNumbers_type3() {
         ListNode l1_1 = new ListNode(1);
         ListNode l1_2 = new ListNode(8);
@@ -55,6 +68,12 @@ public class AddTwoNumbersTest {
         resultList.printListNode();
     }
 
+    /**
+     * 9 -> 8
+     * 1
+     *
+     * 0 -> 9
+     */
     @Test public void testAddTwoNumbers_type4() {
         ListNode l1_1 = new ListNode(9);
         ListNode l1_2 = new ListNode(8);
@@ -65,6 +84,12 @@ public class AddTwoNumbersTest {
         resultList.printListNode();
     }
 
+    /**
+     * 1 -> 9
+     * 9
+     *
+     * 0 -> 0 -> 1
+     */
     @Test public void testAddTwoNumbers_type5() {
         ListNode l1_1 = new ListNode(1);
         ListNode l2_1 = new ListNode(9);
