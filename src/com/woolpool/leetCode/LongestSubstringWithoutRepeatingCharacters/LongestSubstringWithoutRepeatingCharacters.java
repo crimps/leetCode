@@ -6,9 +6,25 @@ package com.woolpool.leetCode.LongestSubstringWithoutRepeatingCharacters;
  * For "bbbbb" the longest substring is "b", with the length of 1.
  */
 public class LongestSubstringWithoutRepeatingCharacters {
+    /**
+     *
+     * @param s characters
+     * @return longest number
+     */
     public int lengthOfLongestSubstring(String s) {
         int length = 0;
 
         return length;
+    }
+
+    /**
+     *
+     * @param s characcters
+     * @return longest number
+     */
+    public int lengthOfLongestSubstring_type2(String s) {
+        int length = 0;
+
+        return  length;
     }
 }
