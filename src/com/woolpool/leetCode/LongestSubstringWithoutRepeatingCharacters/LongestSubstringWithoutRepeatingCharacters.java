@@ -13,7 +13,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
      */
     public int lengthOfLongestSubstring(String s) {
         int length = 0;
-
+        System.out.print("b");
         return length;
     }
 
