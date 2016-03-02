@@ -22,8 +22,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
             for(int j = i + 1; j < lists.length; j++) {
                 String subStr = s.substring(i, j);
                 int matchCount = 0;
-                for(int index = 0; index < s.length(); index++) {
-                    if(s.substring(index, j - i).equals(subStr)) {
+                for(int index = 0; index + j - i < s.length(); index++) {
+                    if(s.substring(index, index + j - i).equals(subStr)) {
                         matchCount++;
                     }
                 }
