@@ -1,5 +1,8 @@
 package com.woolpool.leetCode.LongestSubstringWithoutRepeatingCharacters;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * Given a string, find the length of the longest substring without repeating characters.
  * For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3.
@@ -13,7 +16,23 @@ public class LongestSubstringWithoutRepeatingCharacters {
      */
     public int lengthOfLongestSubstring(String s) {
         int length = 0;
-        System.out.print("b7git");
+        String[] lists = s.split("");
+        Map<Integer, String> treeMap = new TreeMap<Integer, String>();
+        for(int i = 0; i < lists.length; i++) {
+            for(int j = i + 1; j < lists.length; j++) {
+                String subStr = s.substring(i, j);
+                int matchCount = 0;
+                for(int index = 0; index < s.length(); index++) {
+                    if(s.substring(index, j - i).equals(subStr)) {
+                        matchCount++;
+                    }
+                }
+                if(matchCount > 1) {
+                    treeMap.put(j - i, subStr);
+                }
+
+            }
+        }
         return length;
     }
 
