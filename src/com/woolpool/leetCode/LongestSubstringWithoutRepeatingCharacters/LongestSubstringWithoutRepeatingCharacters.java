@@ -10,6 +10,7 @@ import java.util.TreeMap;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
     /**
+     * 列举所有子串情况n*(n/2),再每一个字串判断匹配的次数
      *
      * @param s characters
      * @return longest number
@@ -18,16 +19,16 @@ public class LongestSubstringWithoutRepeatingCharacters {
         int length = 0;
         String[] lists = s.split("");
         Map<Integer, String> treeMap = new TreeMap<Integer, String>();
-        for(int i = 0; i < lists.length; i++) {
-            for(int j = i + 1; j < lists.length; j++) {
+        for (int i = 0; i < lists.length; i++) {
+            for (int j = i + 1; j < lists.length; j++) {
                 String subStr = s.substring(i, j);
                 int matchCount = 0;
-                for(int index = 0; index + j - i < s.length(); index++) {
-                    if(s.substring(index, index + j - i).equals(subStr)) {
+                for (int index = 0; index + j - i < s.length(); index++) {
+                    if (s.substring(index, index + j - i).equals(subStr)) {
                         matchCount++;
                     }
                 }
-                if(matchCount > 1) {
+                if (matchCount > 1) {
                     treeMap.put(j - i, subStr);
                 }
 
@@ -37,13 +38,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     /**
-     *
      * @param s characcters
      * @return longest number
      */
     public int lengthOfLongestSubstring_type2(String s) {
         int length = 0;
 
-        return  length;
+        return length;
     }
 }
