@@ -1,7 +1,7 @@
 package com.woolpool.leetCode.LongestSubstringWithoutRepeatingCharacters;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Given a string, find the length of the longest substring without repeating characters.
@@ -10,7 +10,9 @@ import java.util.TreeMap;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
     /**
-     * 列举所有子串情况n*(n/2),再每一个字串判断匹配的次数
+     * 列举所有子串情况[n*(n/2)],再判断每一个子串字符都是唯一的[n]
+     * 时间复杂度：O(n^3)
+     * 简单但是时间复杂度
      *
      * @param s characters
      * @return longest number
@@ -18,20 +20,18 @@ public class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {
         int length = 0;
         String[] lists = s.split("");
-        Map<Integer, String> treeMap = new TreeMap<Integer, String>();
         for (int i = 0; i < lists.length; i++) {
             for (int j = i + 1; j < lists.length; j++) {
                 String subStr = s.substring(i, j);
-                int matchCount = 0;
-                for (int index = 0; index + j - i < s.length(); index++) {
-                    if (s.substring(index, index + j - i).equals(subStr)) {
-                        matchCount++;
-                    }
-                }
-                if (matchCount > 1) {
-                    treeMap.put(j - i, subStr);
+                String[] subLists = subStr.split("");
+                Map<String, Integer> charMap = new HashMap<>();
+                for (String subStrChar : subLists) {
+                    charMap.put(subStrChar, 1);
                 }
 
+                if(subLists.length == charMap.size() && length < (j - i)) {
+                    length = j - i;
+                }
             }
         }
         return length;
