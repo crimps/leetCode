@@ -43,7 +43,15 @@ public class LongestSubstringWithoutRepeatingCharacters {
      */
     public int lengthOfLongestSubstring_type2(String s) {
         int length = 0;
+        String[] lists = s.split("");
+        Map<String, String> charsMap = new HashMap<>();
+        for(int start = 1, end = start + 1; end < lists.length;) {
+            if(null == charsMap.get(lists[end])) {
+                charsMap.put(lists[end], "true");
+            } else {
 
+            }
+        }
         return length;
     }
 }
