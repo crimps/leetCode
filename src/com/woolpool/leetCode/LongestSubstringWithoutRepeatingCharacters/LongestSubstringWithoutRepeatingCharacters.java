@@ -50,13 +50,40 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 charsMap.put(lists[end], end);
                 end++;
             } else {
-                if(length < (end -start)) {
+                if(length < (end - start)) {
                     length = end - start - 1;
                 }
-
                 start = charsMap.get(lists[end]);
                 end = start + 1;
                 charsMap.clear();
+            }
+        }
+        return length;
+    }
+
+    public int lengthOfLongestSubstring_type3(String s) {
+        int length = 0;
+        String[] charLists = s.split("");
+        Map<String, Integer> charsMap = new HashMap<>();
+        for(int start = 0, end = start + 1; end < charLists.length;) {
+            if(null == charsMap.get(charLists[end])) {
+                charsMap.put(charLists[end], end);
+                end++;
+            } else {
+                if(length < (end - start)) {
+                    length = end - start - 1;
+                }
+                int removeStart = start;
+                int removeEnd = charsMap.get(charLists[end]);
+                start = charsMap.get(charLists[end]);
+                end = start + length;
+
+                //清除map中无效的字符
+                for(int i = removeStart; i < removeEnd; i++) {
+                    charsMap.remove(charLists[i]);
+                }
+
+
             }
         }
         return length;

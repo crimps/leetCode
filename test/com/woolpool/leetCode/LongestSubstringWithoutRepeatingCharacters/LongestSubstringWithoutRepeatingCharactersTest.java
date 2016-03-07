@@ -6,7 +6,7 @@ import org.junit.Test;
  *
  */
 public class LongestSubstringWithoutRepeatingCharactersTest {
-    private String str1 = "aabcdbcdad";
+    private String str1 = "cdda";
     private String str2 = "bbbbb";
     private String str3 = "";
     private String str4 = "rhimfczyirdmdffnaotwbmlgyltsyvnpevclxdji";
@@ -358,6 +358,15 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
         lengthOfLongestSubstringType2CountTime(str6);
     }
 
+    @Test public void testLengthOfLongestSubstring_type3() {
+        lengthOfLongestSubstringType3CountTime(str1);
+//        lengthOfLongestSubstringType3CountTime(str2);
+//        lengthOfLongestSubstringType3CountTime(str3);
+//        lengthOfLongestSubstringType3CountTime(str4);
+//        lengthOfLongestSubstringType3CountTime(str5);
+//        lengthOfLongestSubstringType3CountTime(str6);
+    }
+
     public void lengthOfLongestSubstringCountTime(String str) {
         LongestSubstringWithoutRepeatingCharacters longestSubstringWithoutRepeatingCharacters =
             new LongestSubstringWithoutRepeatingCharacters();
@@ -375,6 +384,18 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
             new LongestSubstringWithoutRepeatingCharacters();
         long start = System.nanoTime();
         int length = longestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring_type2(str);
+        long end = System.nanoTime();
+        System.out.println(str);
+        System.out.println("total time : " + (end - start) + "ns");
+        System.out.println("length:" + length);
+        System.out.println("=====================================");
+    }
+
+    public void lengthOfLongestSubstringType3CountTime(String str) {
+        LongestSubstringWithoutRepeatingCharacters longestSubstringWithoutRepeatingCharacters =
+            new LongestSubstringWithoutRepeatingCharacters();
+        long start = System.nanoTime();
+        int length = longestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring_type3(str);
         long end = System.nanoTime();
         System.out.println(str);
         System.out.println("total time : " + (end - start) + "ns");
