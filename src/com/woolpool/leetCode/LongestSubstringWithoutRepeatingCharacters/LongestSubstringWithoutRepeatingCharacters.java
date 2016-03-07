@@ -55,7 +55,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 }
 
                 start = charsMap.get(lists[end]);
-                end = start + length;
+                end = start + 1;
                 charsMap.clear();
             }
         }

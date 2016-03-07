@@ -10,7 +10,8 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
     private String str2 = "bbbbb";
     private String str3 = "";
     private String str4 = "rhimfczyirdmdffnaotwbmlgyltsyvnpevclxdji";
-    private String str5 =
+    private String str5 = "GEEKSFORGEEKS";
+    private String str6 =
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~ "
             + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~ "
             + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~ "
@@ -345,6 +346,7 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
         lengthOfLongestSubstringCountTime(str3);
         lengthOfLongestSubstringCountTime(str4);
         lengthOfLongestSubstringCountTime(str5);
+//        lengthOfLongestSubstringType2CountTime(str6);
     }
 
     @Test public void testLengthOfLongestSubstring_type2() {
@@ -353,6 +355,7 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
         lengthOfLongestSubstringType2CountTime(str3);
         lengthOfLongestSubstringType2CountTime(str4);
         lengthOfLongestSubstringType2CountTime(str5);
+        lengthOfLongestSubstringType2CountTime(str6);
     }
 
     public void lengthOfLongestSubstringCountTime(String str) {
