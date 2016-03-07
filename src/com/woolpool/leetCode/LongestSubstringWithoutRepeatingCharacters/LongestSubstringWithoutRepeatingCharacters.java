@@ -38,6 +38,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     /**
+     *
      * @param s characcters
      * @return longest number
      */
@@ -61,6 +62,11 @@ public class LongestSubstringWithoutRepeatingCharacters {
         return length;
     }
 
+    /**
+     *
+     * @param s characcters
+     * @return longest number
+     */
     public int lengthOfLongestSubstring_type3(String s) {
         int length = 0;
         String[] charLists = s.split("");
@@ -82,8 +88,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 for(int i = removeStart; i < removeEnd; i++) {
                     charsMap.remove(charLists[i]);
                 }
-
-
             }
         }
         return length;
