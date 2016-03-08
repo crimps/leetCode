@@ -6,7 +6,7 @@ import org.junit.Test;
  *
  */
 public class LongestSubstringWithoutRepeatingCharactersTest {
-    private String str1 = "cdda";
+    private String str1 = "bcaabc";
     private String str2 = "bbbbb";
     private String str3 = "";
     private String str4 = "rhimfczyirdmdffnaotwbmlgyltsyvnpevclxdji";
@@ -359,8 +359,8 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
     }
 
     @Test public void testLengthOfLongestSubstring_type3() {
-//        lengthOfLongestSubstringType3CountTime(str1);
-        lengthOfLongestSubstringType3CountTime(str2);
+        lengthOfLongestSubstringType3CountTime(str1);
+//        lengthOfLongestSubstringType3CountTime(str2);
 //        lengthOfLongestSubstringType3CountTime(str3);
 //        lengthOfLongestSubstringType3CountTime(str4);
 //        lengthOfLongestSubstringType3CountTime(str5);

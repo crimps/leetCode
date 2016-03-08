@@ -82,7 +82,12 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 int removeStart = start;
                 int removeEnd = charsMap.get(charLists[end]);
                 start = charsMap.get(charLists[end]);
-                end = start + length;
+                end = start + length + 1;
+
+                for(int i = removeStart; i < removeEnd; i++) {
+                    System.out.print(charLists[i]);
+                }
+                System.out.print("\n");
 
                 //清除map中无效的字符
                 for(int i = removeStart; i < removeEnd; i++) {
