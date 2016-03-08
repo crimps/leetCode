@@ -360,7 +360,7 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
 
     @Test public void testLengthOfLongestSubstring_type3() {
         lengthOfLongestSubstringType3CountTime(str1);
-//        lengthOfLongestSubstringType3CountTime(str2);
+        lengthOfLongestSubstringType3CountTime(str2);
 //        lengthOfLongestSubstringType3CountTime(str3);
 //        lengthOfLongestSubstringType3CountTime(str4);
 //        lengthOfLongestSubstringType3CountTime(str5);

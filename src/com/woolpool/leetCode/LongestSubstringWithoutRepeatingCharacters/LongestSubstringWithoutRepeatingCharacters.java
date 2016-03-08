@@ -85,7 +85,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 end = start + length + 1;
 
                 for(int i = removeStart; i < removeEnd; i++) {
-                    System.out.print(charLists[i]);
+                    System.out.print("*" + charLists[i] + "*");
                 }
                 System.out.print("\n");
 
