@@ -1,5 +1,6 @@
 package com.woolpool.leetCode.LongestSubstringWithoutRepeatingCharacters;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,7 +26,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 String subStr = s.substring(i, j);
                 String[] subLists = subStr.split("");
                 Map<String, Integer> charMap = new HashMap<>();
-                for (String subStrChar : subLists) {
+                    for (String subStrChar : subLists) {
                     charMap.put(subStrChar, 1);
                 }
 
@@ -68,33 +69,26 @@ public class LongestSubstringWithoutRepeatingCharacters {
      * @return longest number
      */
     public int lengthOfLongestSubstring_type3(String s) {
-        int length = 0;
-        String[] charLists = s.split("");
-        Map<String, Integer> charsMap = new HashMap<>();
-        for(int start = 0, end = start + 1; end < charLists.length;) {
-            if(null == charsMap.get(charLists[end])) {
-                charsMap.put(charLists[end], end);
-                end++;
+        int max = 1;
+
+        if(s.equals("")) {
+            return 0;
+        }
+
+        int[] countTable = new int[256];
+        Arrays.fill(countTable, -1);
+        int start = 0;
+        int end = 1;
+        int length = s.length();
+        countTable[s.charAt(start)] = 0;
+        while(end < length) {
+            if(countTable[s.charAt(end)] > start) {
+                start = countTable[s.charAt(end)] + 1;
             } else {
-                if(length < (end - start)) {
-                    length = end - start - 1;
-                }
-                int removeStart = start;
-                int removeEnd = charsMap.get(charLists[end]);
-                start = charsMap.get(charLists[end]);
-                end = start + length + 1;
-
-                for(int i = removeStart; i < removeEnd; i++) {
-                    System.out.print("*" + charLists[i] + "*");
-                }
-                System.out.print("\n");
-
-                //清除map中无效的字符
-                for(int i = removeStart; i < removeEnd; i++) {
-                    charsMap.remove(charLists[i]);
-                }
+                countTable[s.charAt(end)] = end;
             }
         }
-        return length;
+
+        return max;
     }
 }
