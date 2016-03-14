@@ -6,12 +6,13 @@ import org.junit.Test;
  *
  */
 public class LongestSubstringWithoutRepeatingCharactersTest {
-    private String str1 = "bcaabc";
-    private String str2 = "bbbbb";
-    private String str3 = "";
-    private String str4 = "rhimfczyirdmdffnaotwbmlgyltsyvnpevclxdji";
-    private String str5 = "GEEKSFORGEEKS";
-    private String str6 =
+    private String str1 = "au";
+    private String str2 = "bcaabc";
+    private String str3 = "bbbbb";
+    private String str4 = "";
+    private String str5 = "rhimfczyirdmdffnaotwbmlgyltsyvnpevclxdji";
+    private String str6 = "GEEKSFORGEEKS";
+    private String str7 =
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~ "
             + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~ "
             + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~ "
@@ -359,12 +360,13 @@ public class LongestSubstringWithoutRepeatingCharactersTest {
     }
 
     @Test public void testLengthOfLongestSubstring_type3() {
-//        lengthOfLongestSubstringType3CountTime(str1);
+        lengthOfLongestSubstringType3CountTime(str1);
         lengthOfLongestSubstringType3CountTime(str2);
-//        lengthOfLongestSubstringType3CountTime(str3);
-//        lengthOfLongestSubstringType3CountTime(str4);
-//        lengthOfLongestSubstringType3CountTime(str5);
-//        lengthOfLongestSubstringType3CountTime(str6);
+        lengthOfLongestSubstringType3CountTime(str3);
+        lengthOfLongestSubstringType3CountTime(str4);
+        lengthOfLongestSubstringType3CountTime(str5);
+        lengthOfLongestSubstringType3CountTime(str6);
+        lengthOfLongestSubstringType3CountTime(str7);
     }
 
     public void lengthOfLongestSubstringCountTime(String str) {

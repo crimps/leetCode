@@ -13,7 +13,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
     /**
      * 列举所有子串情况[n*(n/2)],再判断每一个子串字符都是唯一的[n]
      * 时间复杂度：O(n^3)
-     * 简单但是时间复杂度
+     * 简单但是时间复杂度太高
      *
      * @param s characters
      * @return longest number
@@ -64,7 +64,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     /**
-     *
+     * 新建一个空数组以存储信息，数组值默认为-1，下标为字符的asii码，值为字符的位置
+     * 从第一个字符开始，如果字符下标对应的值
      * @param s characcters
      * @return longest number
      */
@@ -87,6 +88,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
             } else {
                 countTable[s.charAt(end)] = end;
             }
+            max = Math.max(max, end - start);
+            end++;
         }
 
         return max;
