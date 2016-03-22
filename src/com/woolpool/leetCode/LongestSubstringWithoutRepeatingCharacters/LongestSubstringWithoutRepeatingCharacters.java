@@ -65,7 +65,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     /**
      * 新建一个空数组以存储信息，数组值默认为-1，下标为字符的asii码，值为字符的位置
-     * 从第一个字符开始，如果字符下标对应的值
+     * 从第一个字符开始，如果字符下标对应的值大于或等于
      * @param s characcters
      * @return longest number
      */
@@ -83,15 +83,15 @@ public class LongestSubstringWithoutRepeatingCharacters {
         int length = s.length();
         countTable[s.charAt(start)] = 0;
         while(end < length) {
-            if(countTable[s.charAt(end)] > start) {
+            if(countTable[s.charAt(end)] >= start) {
+                max = Math.max(max, end - start);
                 start = countTable[s.charAt(end)] + 1;
             } else {
                 countTable[s.charAt(end)] = end;
+                end++;
             }
-            max = Math.max(max, end - start);
-            end++;
         }
-
+        max = Math.max(max, end - start);
         return max;
     }
 }
