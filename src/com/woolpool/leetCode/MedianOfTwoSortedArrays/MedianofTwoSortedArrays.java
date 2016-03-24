@@ -5,9 +5,14 @@ package com.woolpool.leetCode.MedianOfTwoSortedArrays;
  * Find the median of the two sorted arrays.
  * The overall run time complexity should be O(log (m+n)).
  */
-public class MedianofTwoSortedArrays {
+public class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         double result = 0;
+
+        double medianLength = (nums1.length + nums2.length)/2;
+        for(int i = 0, j = 0; i < nums1.length && j < nums2.length;) {
+
+        }
 
         return  result;
     }
