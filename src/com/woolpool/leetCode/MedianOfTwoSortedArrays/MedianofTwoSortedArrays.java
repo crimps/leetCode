@@ -8,7 +8,7 @@ import java.util.List;
  * Find the median of the two sorted arrays.
  * The overall run time complexity should be O(log (m+n)).
  */
-public class MedianOfTwoSortedArrays {
+public class MedianofTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         List<Integer> nums = new ArrayList<>();
         int index1 = 0;
