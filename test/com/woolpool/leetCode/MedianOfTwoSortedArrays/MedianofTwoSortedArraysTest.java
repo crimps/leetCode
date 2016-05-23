@@ -22,7 +22,7 @@ public class MedianofTwoSortedArraysTest {
         double result2 = medianofTwoSortedArrays.findMedianSortedArrays(type2_number1, type2_number2);
         System.out.println(result2);
 
-        double result3 = medianofTwoSortedArrays.findMedianSortedArrays(type2_number1, type3_number2);
+        double result3 = medianofTwoSortedArrays.findMedianSortedArrays(type3_number1, type3_number2);
         System.out.println(result3);
     }
 }
