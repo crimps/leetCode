@@ -20,6 +20,7 @@ public class LongestPalindromicSubstringTest {
             "kzsxmgczpwhpkzcntkcwhkdkxvfnjbvjjoumczjyvdgkfukfuldolqnauvoyhoheoqvpwoisniv";
     private String s5 = "a";
     private String s6 = "bb";
+    private String s7 = "abba";
 
     @Test
     public void testLongestPalindrome() throws Exception {
@@ -29,6 +30,7 @@ public class LongestPalindromicSubstringTest {
         System.out.println(longestPalindromicSubstring.longestPalindrome(s4));
         System.out.println(longestPalindromicSubstring.longestPalindrome(s5));
         System.out.println(longestPalindromicSubstring.longestPalindrome(s6));
+        System.out.println(longestPalindromicSubstring.longestPalindrome(s7));
     }
 
     @Test
@@ -39,6 +41,7 @@ public class LongestPalindromicSubstringTest {
         System.out.println(longestPalindromicSubstring.longestPalindrome_type2(s4));
         System.out.println(longestPalindromicSubstring.longestPalindrome_type2(s5));
         System.out.println(longestPalindromicSubstring.longestPalindrome_type2(s6));
+        System.out.println(longestPalindromicSubstring.longestPalindrome_type2(s7));
     }
 
     @Test
