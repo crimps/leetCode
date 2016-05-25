@@ -1,5 +1,6 @@
 package com.woolpool.leetCode.LongestPalindromicSubstring;
 
+
 /**
  * Given a string S, find the longest palindromic substring in S.
  * You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
@@ -8,6 +9,7 @@ public class LongestPalindromicSubstring {
 
     /**
      * 暴力解法，遍历所有的子串，记录最长的回文子串
+     * 时间复杂度：O(n^3)
      * @param s
      * @return
      */
@@ -20,6 +22,35 @@ public class LongestPalindromicSubstring {
                     result = subStr;
                 }
             }
+        }
+        return result;
+    }
+
+    /**
+     * 以某一个元素为中心，向两边扩散，记录最长回文子串
+     * 时间复杂度：O(n^2)
+     * @param s
+     * @return
+     */
+    public String longestPalindrome_type2(String s) {
+        String result = "";
+        if(s.length() == 1) {
+            return s;
+        }
+        for (int index = 1; index < s.length(); index++) {
+            //以index为中心的奇数长度回文
+            int start = index - 1;
+            int end = index + 1;
+            while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+                start--;
+                end++;
+            }
+            if (start + 1 >= 0 && end <= s.length() && result.length() < (end - start - 1)) {
+                result = s.substring(start + 1, end);
+            }
+
+            //以index为中心的偶数长度回文
+
         }
         return result;
     }
@@ -39,6 +70,7 @@ public class LongestPalindromicSubstring {
                 }
             }
         } else {
+
             result = false;
         }
         return result;
