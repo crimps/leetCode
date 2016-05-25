@@ -34,6 +34,8 @@ public class LongestPalindromicSubstring {
      */
     public String longestPalindrome_type2(String s) {
         String result = "";
+        int begin = 0;
+        int maxLength = 0;
         if(s.length() == 1) {
             return s;
         }
@@ -45,12 +47,27 @@ public class LongestPalindromicSubstring {
                 start--;
                 end++;
             }
-            if (start + 1 >= 0 && end <= s.length() && result.length() < (end - start - 1)) {
-                result = s.substring(start + 1, end);
+            start ++;
+            if (start >= 0 && end <= s.length() && maxLength < (end - start)) {
+                begin = start;
+                maxLength = end - start;
             }
 
             //以index为中心的偶数长度回文
+            start = index - 1;
+            end = index;
+            while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
+                start --;
+                end ++;
+            }
+            start ++;
+            if (start >= 0 && end <= s.length() && maxLength < (end - start)) {
+                begin = start;
+                maxLength = end -start;
+            }
 
+
+            result = s.substring(begin, begin + maxLength);
         }
         return result;
     }
