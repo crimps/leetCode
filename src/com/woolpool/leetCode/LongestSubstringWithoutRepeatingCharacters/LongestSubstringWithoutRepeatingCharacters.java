@@ -65,7 +65,9 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     /**
      * 新建一个空数组以存储信息，数组值默认为-1，下标为字符的asii码，值为字符的位置
-     * 从第一个字符开始，如果字符下标对应的值大于或等于
+     * 从第一个字符开始，如果字符下标对应的值大于或等于数组中的值，则说明出现了重复的字符，
+     * 记录当前不重复字符的长度，然后从开始字符的下一位重新开始计算。
+     * 时间复杂度：O(n)
      * @param s characcters
      * @return longest number
      */
