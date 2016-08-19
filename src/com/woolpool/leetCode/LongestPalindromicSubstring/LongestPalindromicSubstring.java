@@ -10,8 +10,8 @@ public class LongestPalindromicSubstring {
     /**
      * 暴力解法，遍历所有的子串，记录最长的回文子串
      * 时间复杂度：O(n^3)
-     * @param s
-     * @return
+     * @param s 字符串
+     * @return 最长回文子串
      */
     public String longestPalindrome(String s) {
         String result = "";
@@ -29,8 +29,8 @@ public class LongestPalindromicSubstring {
     /**
      * 以某一个元素为中心，向两边扩散，记录最长回文子串
      * 时间复杂度：O(n^2)
-     * @param s
-     * @return
+     * @param s 字符串
+     * @return 最长回文子串
      */
     public String longestPalindrome_type2(String s) {
         String result = "";
