@@ -73,6 +73,16 @@ public class LongestPalindromicSubstring {
     }
 
     /**
+     *
+     * @param s 字符串
+     * @return 最长回文串
+     */
+    public String longestPalindrome_type3(String s) {
+        String result = "";
+        return  result;
+    }
+
+    /**
      * 判断是否是回文
      * @param s 字符串
      * @return true or false
