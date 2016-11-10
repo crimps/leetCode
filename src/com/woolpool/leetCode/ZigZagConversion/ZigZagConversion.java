@@ -1,7 +1,7 @@
 /**
  * @(#)com.woolpool.leetCode.ZigZagConversion.ZigZagConversion.java
  *
- * Copyright (c) 2014-2018 厦门民航凯亚有限公司
+ * Copyright (c) 2014-2018
  *
  */
 package com.woolpool.leetCode.ZigZagConversion;
