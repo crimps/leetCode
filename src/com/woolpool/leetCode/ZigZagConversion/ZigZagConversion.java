@@ -9,7 +9,6 @@ package com.woolpool.leetCode.ZigZagConversion;
  * @modified chenwz  16/8/19  <创建>
  */
 
-import javax.management.StringValueExp;
 import java.util.*;
 
 /**
@@ -31,25 +30,30 @@ public class ZigZagConversion {
         StringBuffer sb = new StringBuffer();
         char[] chars = s.toCharArray();
         Map<Integer, StringBuffer> resultMap = new HashMap<>();
-        int mediaIndex = (numRows + 1) / 2;
-        for (int i = 0; i < chars.length; i++) {
-            if (null == resultMap.get((i + 1) % (numRows + 1)) && (i + 1) % (numRows + 1) != 0) {
+        boolean order = true;
+        int count = 1;
+        for (int i = 0; i < chars.length; i++, count++) {
+            if (null == resultMap.get(i%numRows)) {
                 StringBuffer temp = new StringBuffer();
                 temp.append(String.valueOf(chars[i]));
-                resultMap.put((i + 1) % (numRows + 1), temp);
+                resultMap.put(i%numRows, temp);
             } else {
-                if (0 == (i + 1) % (numRows + 1)) {
-                    if (0 == numRows % 2) {
-                        resultMap.get(mediaIndex + 1).append(String.valueOf(chars[i]));
-                    } else {
-                        resultMap.get(mediaIndex).append(String.valueOf(chars[i]));
+                if (order) {
+                    resultMap.get(i%numRows).append(chars[i]);
+                    if (count > numRows) {
+                        order = false;
+                        count = 0;
                     }
                 } else {
-                    resultMap.get((i + 1) % (numRows + 1)).append(String.valueOf(chars[i]));
+                    resultMap.get(numRows - (i%numRows)).append(chars[i]);
+                    if (count > numRows - 2) {
+                        order = true;
+                        count = 0;
+                    }
                 }
             }
-
         }
+
         for (Map.Entry entry : resultMap.entrySet()) {
             sb.append(entry.getValue());
         }

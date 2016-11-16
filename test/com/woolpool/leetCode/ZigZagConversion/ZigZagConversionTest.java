@@ -10,8 +10,8 @@ public class ZigZagConversionTest {
     @Test
     public void testConvert() throws Exception {
         ZigZagConversion zigZagConversion = new ZigZagConversion();
-//        zigZagConversion.convert(convert, 3);
-//        zigZagConversion.convert("ABC", 2);
+        zigZagConversion.convert(convert, 3);
+        zigZagConversion.convert("ABC", 2);
         zigZagConversion.convert("ABCDE", 4);
     }
 }
