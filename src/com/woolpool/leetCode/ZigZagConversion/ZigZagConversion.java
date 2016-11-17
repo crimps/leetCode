@@ -4,9 +4,9 @@
 package com.woolpool.leetCode.ZigZagConversion;
 
 /**
- * @author chenwz
+ * @author crimps
  * @version 1.0  16/8/19
- * @modified chenwz  16/8/19  <创建>
+ * @modified crimps  16/8/19  <创建>
  */
 
 import java.util.*;
