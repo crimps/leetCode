@@ -33,6 +33,18 @@ public class ZigZagConversion {
         boolean order = true;
         int count = 1;
         for (int i = 0; i < chars.length; i++, count++) {
+            if (order) {
+                if (count > numRows) {
+                    order = false;
+                    count = 0;
+                }
+            } else {
+                if (count > numRows - 2) {
+                    order = true;
+                    count = 0;
+                }
+            }
+
             if (null == resultMap.get(i%numRows)) {
                 StringBuffer temp = new StringBuffer();
                 temp.append(String.valueOf(chars[i]));
@@ -40,16 +52,8 @@ public class ZigZagConversion {
             } else {
                 if (order) {
                     resultMap.get(i%numRows).append(chars[i]);
-                    if (count > numRows) {
-                        order = false;
-                        count = 0;
-                    }
                 } else {
                     resultMap.get(numRows - (i%numRows)).append(chars[i]);
-                    if (count > numRows - 2) {
-                        order = true;
-                        count = 0;
-                    }
                 }
             }
         }
