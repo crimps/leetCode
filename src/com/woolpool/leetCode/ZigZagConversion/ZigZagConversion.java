@@ -78,6 +78,12 @@ public class ZigZagConversion {
         return sb.toString();
     }
 
+    /**
+     * 规律法
+     * @param s
+     * @param numRows
+     * @return
+     */
     public String convert_type2(String s, int numRows) {
         return null;
     }
