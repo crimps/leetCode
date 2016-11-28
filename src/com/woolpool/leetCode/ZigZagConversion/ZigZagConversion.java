@@ -34,6 +34,7 @@ public class ZigZagConversion {
      * @return
      */
     public String convert(String s, int numRows) {
+        //只有排列一行或是字符串为空串，直接返回字符串
         if (0 == s.length() || numRows <= 1) {
             return s;
         }
@@ -41,7 +42,7 @@ public class ZigZagConversion {
         StringBuffer sb = new StringBuffer();
         char[] chars = s.toCharArray();
         Map<Integer, StringBuffer> charMap = new HashMap<>();
-        boolean order = true;
+        boolean order = true;   //顺序：true-正序，false-反序
         int rowcount = 0;
         for(int index = 0; index < s.length(); index++) {
             if (order) {
@@ -55,6 +56,7 @@ public class ZigZagConversion {
                     rowcount = 0;
                 }
             } else {
+                //处理列数为2的特殊情况
                 if (numRows - 2 <= 0) {
                     order = true;
                     rowcount = 0;
