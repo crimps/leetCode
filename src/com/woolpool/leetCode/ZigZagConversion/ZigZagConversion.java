@@ -27,39 +27,44 @@ import java.util.*;
 public class ZigZagConversion {
 
     public String convert(String s, int numRows) {
+        if (0 == s.length() || numRows <= 1) {
+            return s;
+        }
         StringBuffer sb = new StringBuffer();
         char[] chars = s.toCharArray();
-        Map<Integer, StringBuffer> resultMap = new HashMap<>();
+        Map<Integer, StringBuffer> charMap = new HashMap<>();
         boolean order = true;
-        int count = 1;
-        for (int i = 0; i < chars.length; i++, count++) {
+        int rowcount = 0;
+        for(int index = 0; index < s.length(); index++) {
             if (order) {
-                if (count > numRows) {
+                if (null == charMap.get(rowcount)) {
+                    charMap.put(rowcount, new StringBuffer());
+                }
+                charMap.get(rowcount).append(chars[index]);
+                rowcount++;
+                if (rowcount >= numRows) {
                     order = false;
-                    count = 0;
+                    rowcount = 0;
                 }
             } else {
-                if (count > numRows - 2) {
-                    order = true;
-                    count = 0;
-                }
-            }
 
-            if (null == resultMap.get(i%numRows)) {
-                StringBuffer temp = new StringBuffer();
-                temp.append(String.valueOf(chars[i]));
-                resultMap.put(i%numRows, temp);
-            } else {
-                if (order) {
-                    resultMap.get(i%numRows).append(chars[i]);
+                if (numRows - 2 <= 0) {
+                    order = true;
+                    rowcount = 0;
+                    index--;
                 } else {
-                    resultMap.get(numRows - (i%numRows)).append(chars[i]);
+                    charMap.get(numRows - rowcount - 2).append(chars[index]);
+                    rowcount++;
+                    if (rowcount >= numRows - 2) {
+                        order = true;
+                        rowcount = 0;
+                    }
                 }
             }
         }
 
-        for (Map.Entry entry : resultMap.entrySet()) {
-            sb.append(entry.getValue());
+        for (Map.Entry entry : charMap.entrySet()) {
+            sb.append(charMap.get(entry.getKey()));
         }
         return sb.toString();
     }
