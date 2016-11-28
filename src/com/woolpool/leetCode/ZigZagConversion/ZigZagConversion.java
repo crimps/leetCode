@@ -26,10 +26,18 @@ import java.util.*;
  */
 public class ZigZagConversion {
 
+    /**
+     * 排列解法
+     * 将字符按排列形式填入二维数组当中，然后按行来读取得到的就是最终的结果
+     * @param s
+     * @param numRows
+     * @return
+     */
     public String convert(String s, int numRows) {
         if (0 == s.length() || numRows <= 1) {
             return s;
         }
+
         StringBuffer sb = new StringBuffer();
         char[] chars = s.toCharArray();
         Map<Integer, StringBuffer> charMap = new HashMap<>();
@@ -47,7 +55,6 @@ public class ZigZagConversion {
                     rowcount = 0;
                 }
             } else {
-
                 if (numRows - 2 <= 0) {
                     order = true;
                     rowcount = 0;
