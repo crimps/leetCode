@@ -17,7 +17,39 @@ package com.woolpool.leetCode.reverseInteger;
  Example2: x = -123, return -321
  */
 public class ReverseInteger {
+    /**
+     * 考虑int类型反转之后溢出情况
+     * @param x
+     * @return
+     */
     public int reverse(int x) {
+        StringBuffer reverseSb = new StringBuffer();
+        char[] chars = String.valueOf(x).toCharArray();
+        if (x >= 0) {
+            for(int i = chars.length - 1; i >= 0; i--) {
+                reverseSb.append(chars[i]);
+            }
+        } else {
+            reverseSb.append("-");
+            for(int i = chars.length - 1; i > 0; i--) {
+                reverseSb.append(chars[i]);
+            }
+        }
+        //处理int溢出情况
+        long reverseLong = Long.parseLong(reverseSb.toString());
+        if (reverseLong > Integer.MAX_VALUE || reverseLong < Integer.MIN_VALUE) {
+            return 0;
+        } else {
+            return Integer.parseInt(reverseSb.toString());
+        }
+    }
+
+    /**
+     *
+     * @param x
+     * @return
+     */
+    public int reverse_type2(int x) {
         return 0;
     }
 }
