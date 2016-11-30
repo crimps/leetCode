@@ -43,13 +43,4 @@ public class ReverseInteger {
             return Integer.parseInt(reverseSb.toString());
         }
     }
-
-    /**
-     *
-     * @param x
-     * @return
-     */
-    public int reverse_type2(int x) {
-        return 0;
-    }
 }
