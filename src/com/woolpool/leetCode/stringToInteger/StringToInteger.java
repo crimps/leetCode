@@ -95,10 +95,10 @@ public class StringToInteger {
                 if (doubleAtoi >= Integer.MIN_VALUE && doubleAtoi <= Integer.MAX_VALUE) {
                     return Integer.parseInt(str.substring(0, index + 1));
                 } else {
-                    if (doubleAtoi - 1 <= Integer.MAX_VALUE) {
+                    if (doubleAtoi - 1 == Integer.MAX_VALUE) {
                         return Integer.MAX_VALUE;
                     }
-                    if (doubleAtoi + 1 >= Integer.MIN_VALUE) {
+                    if (doubleAtoi + 1 == Integer.MIN_VALUE) {
                         return Integer.MIN_VALUE;
                     }
                     return 0;
