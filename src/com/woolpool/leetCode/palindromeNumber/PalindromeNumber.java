@@ -58,10 +58,19 @@ public class PalindromeNumber {
         if (0 <= x && x <= 9) {
             return true;
         } else {
-            for(int i = 0; i < Integer.valueOf(x).toString().length(); i++) {
-
+            int temp_x = x;
+            int length = Integer.valueOf(x).toString().length();
+            double reverseInt = 0;
+            for(int i = 0; i < length; i++) {
+                int value = temp_x % 10;
+                reverseInt = reverseInt + value * Math.pow(10, length - 1 - i);
+                temp_x = (temp_x - value)/10;
+            }
+            if (reverseInt == x) {
+                return true;
+            } else {
+                return false;
             }
         }
-        return true;
     }
 }

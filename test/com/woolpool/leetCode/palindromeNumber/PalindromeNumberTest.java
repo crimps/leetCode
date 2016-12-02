@@ -17,6 +17,10 @@ public class PalindromeNumberTest {
         assertEquals(EQUALS, false, palindromeNumber.isPalindrome(10));
         assertEquals(EQUALS, false, palindromeNumber.isPalindrome(-2147483648));
         assertEquals(EQUALS, true, palindromeNumber.isPalindrome(121));
+
+        assertEquals(EQUALS, false, palindromeNumber.isPalindrome_type2(10));
+        assertEquals(EQUALS, false, palindromeNumber.isPalindrome_type2(-2147483648));
+        assertEquals(EQUALS, true, palindromeNumber.isPalindrome_type2(121));
     }
 
 }
