@@ -49,6 +49,11 @@ public class PalindromeNumber {
         }
     }
 
+    /**
+     * 采用取模的方式从最后一位取出数值，组合之后再做比较
+     * @param x
+     * @return
+     */
     public boolean isPalindrome_type2(int x) {
         //负数都不是回文
         if (x < 0) {
