@@ -10,6 +10,7 @@ package com.woolpool.leetCode.stringToInteger;
  * @modified crimps  16/11/30  <创建>
  */
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -71,15 +72,18 @@ public class StringToInteger {
                     index = 0;
                 }
             } else {
+                int start = 0;
                 //带正、负号的情况
                 if (!Character.isDigit(str.charAt(0))) {
                     if (!('+' == str.charAt(0) || '-' == str.charAt(0))) {
                         flag = false;
                         index = -1;
+                    } else {
+                        start = 1;
                     }
                 }
                 if (flag) {
-                    for(int i = 1; i < str.length(); i++) {
+                    for(int i = start; i < str.length(); i++) {
                         if (!Character.isDigit(str.charAt(i))) {
                             break;
                         } else {
@@ -94,13 +98,13 @@ public class StringToInteger {
                 if (doubleAtoi >= Integer.MIN_VALUE && doubleAtoi <= Integer.MAX_VALUE) {
                     return Integer.parseInt(str.substring(0, index + 1));
                 } else {
-                    if (doubleAtoi - 1 == Integer.MAX_VALUE) {
+                    if (doubleAtoi > Integer.MAX_VALUE) {
                         return Integer.MAX_VALUE;
-                    }
-                    if (doubleAtoi + 1 == Integer.MIN_VALUE) {
+                    } else if (doubleAtoi < Integer.MIN_VALUE) {
                         return Integer.MIN_VALUE;
+                    } else {
+                        return 0;
                     }
-                    return 0;
                 }
             } else {
                 return 0;
